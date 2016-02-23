@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace Project2.Models
 {
@@ -50,7 +54,7 @@ namespace Project2.Models
     {
         [Required]
         [Display(Name = "Email")]
-        [EmailAddress]
+        //[EmailAddress]
         public string Email { get; set; }
 
         [Required]
@@ -68,6 +72,10 @@ namespace Project2.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Nickname")]
+        public string Nickname { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

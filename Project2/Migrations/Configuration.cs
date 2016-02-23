@@ -5,6 +5,7 @@ namespace Project2.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
+
     internal sealed class Configuration : DbMigrationsConfiguration<Project2.Models.ApplicationDbContext>
     {
         public Configuration()
@@ -14,6 +15,8 @@ namespace Project2.Migrations
 
         protected override void Seed(Project2.Models.ApplicationDbContext context)
         {
+ 
+        // Code removed for brevity
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
@@ -27,5 +30,7 @@ namespace Project2.Migrations
             //    );
             //
         }
+
+
     }
 }

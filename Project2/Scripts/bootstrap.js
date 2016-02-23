@@ -443,7 +443,8 @@ if ($) {
   };
 
   $(document).ready(function(){
-    $('.collapsible').collapsible();
+      $('.collapsible').collapsible();
+
   });
 }( jQuery ));;(function ($) {
 

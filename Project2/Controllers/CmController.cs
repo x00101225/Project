@@ -8,10 +8,12 @@ using System.Web;
 using System.Web.Mvc;
 using Project2.Models;
 
+
 namespace Project2.Controllers
 {
     public class CmController : Controller
     {
+       
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Cm
@@ -36,9 +38,11 @@ namespace Project2.Controllers
         }
 
         // GET: Cm/Create
+        [Authorize]
         public ActionResult Create()
         {
-            return View();
+            
+            return View(new Contact { Name = User.Identity.Name });
         }
 
         // POST: Cm/Create
@@ -48,13 +52,16 @@ namespace Project2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ContactId,Name,Address,City,State,Zip,Email")] Contact contact)
         {
+            //gets logged in username
+            var model = new Contact { Name = User.Identity.Name };
+
             if (ModelState.IsValid)
             {
                 db.Contacts.Add(contact);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            
             return View(contact);
         }
 

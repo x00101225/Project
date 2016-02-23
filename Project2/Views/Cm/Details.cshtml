@@ -41,14 +41,7 @@
         <dd>
             @Html.DisplayFor(model => model.State)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Zip)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Zip)
-        </dd>
+        
 
         <dt>
             @Html.DisplayNameFor(model => model.Email)
@@ -58,7 +51,17 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
 
+        <dd>
+            <b>
+                <!--VIDEO-->
+                @Html.DisplayFor(model => model.Zip)
+                <iframe width="853" height="480" src="@Html.DisplayFor(model => model.Zip)" frameborder="0" allowfullscreen></iframe>
+
+            </b>
+        </dd>
+
     </dl>
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ContactId }) |

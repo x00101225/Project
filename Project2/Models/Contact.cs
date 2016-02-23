@@ -5,10 +5,12 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
+
 namespace Project2.Models
 {
     public class Contact
     {
+
         public int ContactId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
@@ -18,4 +20,6 @@ namespace Project2.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
     }
+
+
 }

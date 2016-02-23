@@ -5,18 +5,26 @@
     {
     @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="Manage/Index">Manage</a></li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log Off</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+
+            <li>
+                <a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="large material-icons">perm_identity</i></a>
+            </li>
+
+
+        </ul>
+
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>@Html.ActionLink("Log In", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }
