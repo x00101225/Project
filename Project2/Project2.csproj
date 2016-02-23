@@ -171,6 +171,7 @@
     <Compile Include="Controllers\CmController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PayController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -253,6 +254,7 @@
     <Content Include="Views\Cm\Details.cshtml" />
     <Content Include="Views\Cm\Edit.cshtml" />
     <Content Include="Views\Cm\Index.cshtml" />
+    <Content Include="Views\Pay\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
