@@ -1,0 +1,47 @@
+﻿@model Project2.Models.Vote
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <form action="@Url.Action("index")" method="post">
+        <table>
+            <tr>
+                <td>
+                    <a href="#" onclick="upvote();">^</a><h2 id="hVote"></h2><a href="#" onclick="downvote();">v</a>
+                    @Html.HiddenFor(e => e.Value, new { id = "hdnvalue" })<br />
+                </td>
+                <td>
+                    @Html.TextAreaFor(e => e.Sugesstion, new { id = "txtSuggesstion" })
+                </td>
+            </tr>
+        </table>
+        <input type="submit" onclick="return checkSuggesstion();" value="Submit" />
+    </form>
+</div>
+<script>
+    var vote = 0;
+    function upvote() {
+            vote ++ ;
+        $("#hdnvalue").val(vote);
+        $("#hVote").html(vote);
+    }
+
+    function downvote() {
+            vote--;
+        $("#hdnvalue").val(vote);
+        $("#hVote").html(vote);
+    }
+
+    function checkSuggesstion() {
+        if ($("#txtSuggesstion").val() === ''){
+            alert("Please enter suggesstion");
+            return false;
+        }
+        if (vote===0) {
+            alert("Please vote before submitting");
+            return false;
+        }
+        return true;
+    }
+</script>

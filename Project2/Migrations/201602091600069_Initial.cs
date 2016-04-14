@@ -7,6 +7,7 @@ namespace Project2.Migrations
     {
         public override void Up()
         {
+            
             CreateTable(
                 "dbo.Contacts",
                 c => new
