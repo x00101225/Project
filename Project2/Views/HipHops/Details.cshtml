@@ -1,4 +1,4 @@
-﻿@model Project2.Models.Contact
+﻿@model Project2.Models.HipHop
 
 @{
     ViewBag.Title = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Contact</h4>
+    <h4>HipHop</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -42,18 +42,15 @@
             @Html.DisplayFor(model => model.Comment)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
 
         <dd>
-            <b>
-                <!--VIDEO-->
-                @Html.DisplayFor(model => model.Link)
-                <iframe width="853" height="480" src="@Html.DisplayFor(model => model.Link)" frameborder="0" allowfullscreen></iframe>
-
-            </b>
+            @Html.DisplayFor(model => model.Link)
         </dd>
 
     </dl>
-
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ContactId }) |

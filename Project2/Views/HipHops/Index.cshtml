@@ -1,10 +1,10 @@
 ﻿
-@model IEnumerable<Project2.Models.Contact>
+@model IEnumerable<Project2.Models.HipHop>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Rock</h2>
+<h2>Hip Hop</h2>
 <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
         <p><a class="btn btn-default blue" href="Create">Create New</a></p>
@@ -21,7 +21,7 @@
         <dl class="dl-horizontal">
 
             <dt>
-                
+
                 @Html.DisplayNameFor(model => model.Name)
             </dt>
 
@@ -64,11 +64,7 @@
                 </b>
             </dd>
 
-            <dd>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ContactId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ContactId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ContactId })
-            </dd>
+
 
         </dl>
     </div>

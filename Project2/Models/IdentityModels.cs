@@ -33,5 +33,9 @@ namespace Project2.Models
         public System.Data.Entity.DbSet<Project2.Models.Contact> Contacts { get; set; }
 
         public System.Data.Entity.DbSet<Project2.Models.Vote> Votes { get; set; }
+
+        public System.Data.Entity.DbSet<Project2.Models.Electronic> Electronics { get; set; }
+
+        public System.Data.Entity.DbSet<Project2.Models.HipHop> HipHops { get; set; }
     }
 }

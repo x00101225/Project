@@ -10,115 +10,107 @@ using Project2.Models;
 
 namespace Project2.Controllers
 {
-    public class VotesController : Controller
+    public class HipHopsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        // GET: HipHops
         public ActionResult Index()
         {
-            return View();
+            return View(db.HipHops.ToList());
         }
 
-        [HttpPost]
-        public ActionResult Index(Vote model)
-        {
-            var vote = model.Value;
-            var sugg = model.Sugesstion;
-            //save vote
-            return View();
-        }
-
-        // GET: Votes/Details/5
+        // GET: HipHops/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Vote vote = db.Votes.Find(id);
-            if (vote == null)
+            HipHop hipHop = db.HipHops.Find(id);
+            if (hipHop == null)
             {
                 return HttpNotFound();
             }
-            return View(vote);
+            return View(hipHop);
         }
 
-        // GET: Votes/Create
+        // GET: HipHops/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Votes/Create
+        // POST: HipHops/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VoteId,Value,Sugesstion,UserId")] Vote vote)
+        public ActionResult Create([Bind(Include = "ContactId,Name,Location,SubGenre,Comment,Link")] HipHop hipHop)
         {
             if (ModelState.IsValid)
             {
-                db.Votes.Add(vote);
+                db.HipHops.Add(hipHop);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(vote);
+            return View(hipHop);
         }
 
-        // GET: Votes/Edit/5
+        // GET: HipHops/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Vote vote = db.Votes.Find(id);
-            if (vote == null)
+            HipHop hipHop = db.HipHops.Find(id);
+            if (hipHop == null)
             {
                 return HttpNotFound();
             }
-            return View(vote);
+            return View(hipHop);
         }
 
-        // POST: Votes/Edit/5
+        // POST: HipHops/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "VoteId,Value,Sugesstion,UserId")] Vote vote)
+        public ActionResult Edit([Bind(Include = "ContactId,Name,Location,SubGenre,Comment,Link")] HipHop hipHop)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(vote).State = EntityState.Modified;
+                db.Entry(hipHop).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(vote);
+            return View(hipHop);
         }
 
-        // GET: Votes/Delete/5
+        // GET: HipHops/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Vote vote = db.Votes.Find(id);
-            if (vote == null)
+            HipHop hipHop = db.HipHops.Find(id);
+            if (hipHop == null)
             {
                 return HttpNotFound();
             }
-            return View(vote);
+            return View(hipHop);
         }
 
-        // POST: Votes/Delete/5
+        // POST: HipHops/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Vote vote = db.Votes.Find(id);
-            db.Votes.Remove(vote);
+            HipHop hipHop = db.HipHops.Find(id);
+            db.HipHops.Remove(hipHop);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

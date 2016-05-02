@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+
 namespace Project2.Models
 {
     public class Vote
@@ -13,4 +14,5 @@ namespace Project2.Models
         public string Sugesstion { get; set; }
         public string UserId { get; set; }
     }
+
 }
