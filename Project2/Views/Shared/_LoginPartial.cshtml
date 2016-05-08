@@ -4,7 +4,8 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
     @Html.AntiForgeryToken()
-
+        <!--LOGIN DISABLED-->
+        <!--
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="Manage/Index">Manage</a></li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log Off</a></li>
@@ -19,12 +20,15 @@
 
 
         </ul>
-
+            -->
     }
 }
 else
 {
+    
+        <!--
     <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>@Html.ActionLink("Log In", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
+            -->
 }

@@ -8,15 +8,16 @@
 
             <h1><i>Post of the month.</i></h1>
 
-
+            <!--REALTIME LIKE BUTTON USING SIGNAL R-->
             <button data-id="@Model.Post.Id" type="button" class="like-button" title="Click to like this post!">
                 <i class="fa fa-thumbs-up"></i> Like
                 |
                 <span class="like-count">@Model.PostLikes</span>
             </button>
-        <h1></h1>
+            <h1></h1>
+            <!--EMBEDED VIDEO PLAYED AUTOMATICALLY-->
             <div class="video-container">
-                <iframe width="853" height="480" src="//www.youtube.com/embed/sBzrzS1Ag_g" frameborder="0" allowfullscreen></iframe>
+                <iframe width="853" height="480" src="//www.youtube.com/embed/sBzrzS1Ag_g?autoplay=1" frameborder="0" allowfullscreen></iframe>
             </div>
 
     </div>
@@ -24,7 +25,7 @@
 
 @section scripts
 {
-    <script src="/Scripts/jquery-2.2.2.min.js"></script>
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
     <script src="/Scripts/jquery.signalR-2.2.0.min.js"></script>
     <script src="/signalr/hubs"></script>
     <script src="/Scripts/likeButton.js"></script>

@@ -29,3 +29,8 @@ namespace Project2.Entities
         public virtual DbSet<PostLike> PostLikes { get; set; }
     }
 }
+
+
+//REF:
+//www.danylkoweb.com/Blog/how-to-make-your-own-real-time-like-button-using-aspnet-mvc-jquery-and-signalr-QF
+//github.com/jdanylko/LikeButtonDemo
