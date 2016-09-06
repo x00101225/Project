@@ -1,64 +1,60 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Tracklist</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
-    <!--mobile menu collapse-->
-    <script>
-        $(document).ready(function (e) {
-            $(".button-collapse").sideNav();
-        });
-    </script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a>Select a Genre:</a></li>
-        <li><a href="~/Cm/Index">Rock</a></li>
-        <li><a href="~/Electronics/Index">Electronic</a></li>
-        <li><a href="~/HipHops/Index">Hip Hop</a></li>
-    </ul>
-
+    
     <nav>
         <div class="nav-wrapper teal darken-1">
             <a href="#" class="brand-logo center">
                 <img src="~/Images/Heading.jpg">
             </a>
-
-            <a href="#" class="button-collapse" data-activates="mobile-menu"><i class="material-icons">fast_forward</i></a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <a class="button-collapse" data-activates="nav_mobile" href="javascript:;">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="left hide-on-med-and-down">
                 <li><a href="~/Home/Index">Home</a></li>
                 <li><a href="~/Home/About">Featured</a></li>
                 <li><a href="~/Pay/Payment">Payment</a></li>
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Share<i class="material-icons right">arrow_drop_down</i></a></li>
-
+                <li>
+                    <a class="dropdown-button" data-activates="menu_escrow_accounts" data-beloworigin="true" href="javascript:;">Share<i class="material-icons right">arrow_drop_down</i></a>
+                    <ul id="menu_escrow_accounts" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
+                        <li><a>Select a Genre:</a></li>
+                        <li><a href="~/Cm/Index">Rock</a></li>
+                        <li><a href="~/Electronics/Index">Electronic</a></li>
+                        <li><a href="~/HipHops/Index">Hip Hop</a></li>
+                    </ul>
+                </li>
             </ul>
-
-            <!--mobile menu-->
-            <ul class="side-nav" id="mobile-menu">
+            <ul id="nav_mobile" class="side-nav">
                 <li><a href="~/Home/Index">Home</a></li>
                 <li><a href="~/Home/About">Featured</a></li>
                 <li><a href="~/Pay/Payment">Payment</a></li>
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Share<i class="material-icons right">arrow_drop_down</i></a></li>
-
+                <li>
+                    <a class="dropdown-button" data-activates="mobile_menu_escrow_accounts" data-beloworigin="true" href="javascript:;">Share<i class="material-icons right">arrow_drop_down</i></a>
+                    <ul id="mobile_menu_escrow_accounts" class="dropdown-content">
+                        <li><a>Select a Genre:</a></li>
+                        <li><a href="~/Cm/Index">Rock</a></li>
+                        <li><a href="~/Electronics/Index">Electronic</a></li>
+                        <li><a href="~/HipHops/Index">Hip Hop</a></li>
+                    </ul>
+                </li>
             </ul>
-            @Html.Partial("_LoginPartial")
         </div>
-        
     </nav>
-    
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Tracklist by James Hennessy X00101225</p>
+            <p>&copy; @DateTime.Now.Year - Tracklist / James Hennessy X00101225@ittd.ie</p>
         </footer>
     </div>
 
